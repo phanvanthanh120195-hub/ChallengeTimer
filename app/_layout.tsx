@@ -1,10 +1,13 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet } from 'react-native';
+import { useKeepAwake } from 'expo-keep-awake';
 import { Colors } from '../src/constants/themes';
 import { ToastProvider } from '../src/components/Toast';
 
 export default function RootLayout() {
+  useKeepAwake();
+
   return (
     <ToastProvider>
       <View style={styles.container}>
